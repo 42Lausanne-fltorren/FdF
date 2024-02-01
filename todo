@@ -3,3 +3,8 @@ Parse with " ", ",", " ," as delimiters
 Implement rotation
 Adapt window size to image size
 Fix that broken line
+
+
+Error managment:
+    - Check if file exists
+    - Check file right

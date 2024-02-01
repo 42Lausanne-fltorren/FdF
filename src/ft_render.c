@@ -76,17 +76,23 @@ t_point2	ft_point(t_point3 p, t_data data)
 
 void	ft_render_points(t_points points, t_data *data)
 {
-	int			i;
+	int			w;
+	int			h;
 	t_point3	p;
 
-	i = 0;
-	while (i < points.size)
+	h = 0;
+	while (h < points.size / points.width)
 	{
-		p = points.array[i];
-		if (i % points.width != points.width - 1 && i + 1 < points.size)
-			ft_line(p, points.array[i + 1], data);
-		if (i + points.width < points.size)
-			ft_line(points.array[i + points.width], p, data);
-		i++;
+		w = 0;
+		while (w < points.width)
+		{
+			p = points.array[w + h * points.width];
+			if (h > 0)
+				ft_line(points.array[w + (h - 1) * points.width], p, data);
+			if (w > 0)
+				ft_line(points.array[w - 1 + h * points.width], p, data);
+			w++;
+		}
+		h++;
 	}
 }

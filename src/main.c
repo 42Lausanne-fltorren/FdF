@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 18:06:02 by fltorren          #+#    #+#             */
-/*   Updated: 2024/01/10 01:06:33 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:36:13 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,15 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_read_file(argv[1], &points);
 	data.mlx = mlx_init();
-	data.width = 500;
-	data.height = 500;
+	data.width = 600;
+	data.height = 600; 
 	data.alpha = -1.4472;
-	data.zoom = 10;
+	data.zoom = 3;
 	data.win = mlx_new_window(data.mlx, data.width, data.height, "FdF");
 	data.img = mlx_new_image(data.mlx, data.width, data.height);
 	data.points = points;
 	data.x0 = data.width / 2;
-	data.y0 = data.height / 4;
+	data.y0 = data.height;
 	ft_render_points(points, &data);
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
 	mlx_key_hook(data.win, key_hook, &data);

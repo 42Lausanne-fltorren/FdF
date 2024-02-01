@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:48:18 by fltorren          #+#    #+#             */
-/*   Updated: 2024/01/10 01:03:04 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:29:47 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 # include <math.h>
 # include <mlx.h>
 # include <stdio.h>
-# define ESC 0xff1b
+# define ESC 0x35
 # define NUM_PLUS 0xffab
 # define NUM_MINUS 0xffad
-# define UP 0xff52
-# define DOWN 0xff54
-# define LEFT 0xff51
-# define RIGHT 0xff53
+# define UP 0x7e
+# define DOWN 0x7d
+# define LEFT 0x7b
+# define RIGHT 0x7c
 
 typedef struct s_point3
 {
