@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:48:18 by fltorren          #+#    #+#             */
-/*   Updated: 2023/12/19 11:48:07 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/01/10 01:03:04 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,5 @@ t_point2	ft_point(t_point3 p, t_data data);
 int			ft_max(int a, int b);
 int			ft_abs(int a);
 int			ft_min(int a, int b);
+int			ft_atoi_base(char *str, char *base);
 #endif

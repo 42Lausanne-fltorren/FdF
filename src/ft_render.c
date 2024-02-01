@@ -67,16 +67,10 @@ void	ft_line(const t_point3 point1, const t_point3 point2, t_data *data)
 **/
 t_point2	ft_point(t_point3 p, t_data data)
 {
-	float		a;
-	float		b;
-	float		c;
 	t_point2	point;
 
-	a = data.zoom / sqrt(2);
-	b = data.zoom * sin(data.alpha) / sqrt(2);
-	c = data.zoom * cos(data.alpha);
-	point.x = (int)(data.x0 + a * (p.x - p.y));
-	point.y = (int)(data.y0 - c * (p.z) - b * (p.x + p.y));
+	point.x = (sqrt(2.0f) / 2.0f * (p.x - p.y)) * data.zoom + data.x0;
+	point.y = (sqrt(2.0f / 3.0f) * (-p.z) - 1.0f / sqrt(6.0f) * (p.x + p.y)) * data.zoom + data.y0;
 	return (point);
 }
 

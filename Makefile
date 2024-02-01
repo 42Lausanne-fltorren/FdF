@@ -8,7 +8,7 @@ CC_FLAGS	= -Wall -Wextra -Werror -g
 INCLUDES	= -Iinclude -Ilibft
 
 SRC_DIR		= src
-SRC			= get_next_line.c get_next_line_utils.c main.c ft_io.c ft_render.c ft_utils.c
+SRC			= get_next_line.c get_next_line_utils.c main.c ft_io.c ft_render.c ft_utils.c ft_atoi_base.c
 SRCS		= $(addprefix $(SRC_DIR)/, $(SRC))
 
 OUT_DIR		= build

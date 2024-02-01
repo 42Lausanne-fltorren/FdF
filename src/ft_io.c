@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:47:44 by fltorren          #+#    #+#             */
-/*   Updated: 2023/12/15 14:32:51 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/01/10 01:11:45 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ static void	ft_free_split(char **split)
 	free(split);
 }
 
-static void	*ft_realloc(void *ptr, size_t size)
+static void	*ft_realloc(void *ptr, size_t size, size_t new_size)
 {
 	void	*new_ptr;
 
-	new_ptr = malloc(size);
+	new_ptr = malloc(new_size);
 	if (!new_ptr)
 		return (NULL);
 	if (ptr)
 	{
-		ft_memcpy(new_ptr, ptr, size);
+		while (size-- > 0)
+			((char *)new_ptr)[size] = ((char *)ptr)[size];
 		free(ptr);
 	}
 	return (new_ptr);
@@ -48,14 +49,22 @@ static void	ft_read_line(int line, char **split, t_points *points)
 	count = 0;
 	while (split[count])
 		count++;
+	points->array = ft_realloc(points->array, sizeof(t_point3) * points->size, \
+		sizeof(t_point3) * (points->size + count));
 	points->size += count;
-	points->array = ft_realloc(points->array, sizeof(t_point3) * points->size);
 	i = 0;
 	while (split[i])
 	{
-		points->array[points->size - count + i].x = i;
-		points->array[points->size - count + i].y = line;
-		points->array[points->size - count + i].z = ft_atoi(split[i]);
+		points->array[i + line * points->width].x = i;
+		points->array[i + line * points->width].y = line;
+		if (split[i][0] == '0' && split[i][1] == 'X')
+			points->array[i + line * points->width].z
+				= ft_atoi_base(split[i] + 2, "0123456789ABCDEF");
+		else if (split[i][0] == '0' && split[i][1] == 'x')
+			points->array[i + line * points->width].z
+				= ft_atoi_base(split[i] + 2, "0123456789abcdef");
+		else
+			points->array[i + line * points->width].z = ft_atoi(split[i]);
 		i++;
 	}
 	points->width = i;

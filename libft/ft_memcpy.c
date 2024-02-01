@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:16:42 by fltorren          #+#    #+#             */
-/*   Updated: 2023/10/09 14:31:47 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/01/05 23:17:49 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (NULL);
 	s = (unsigned char *) src;
 	d = (unsigned char *) dest;
-	while (n--)
-		d[n] = s[n];
+	while (n-- > 0)
+	{
+		*d++ = *s++;
+	}
 	return (dest);
 }

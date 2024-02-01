@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 18:06:02 by fltorren          #+#    #+#             */
-/*   Updated: 2023/12/19 11:44:01 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/01/10 01:06:33 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 	data.width = 500;
 	data.height = 500;
 	data.alpha = -1.4472;
-	data.zoom = 1;
+	data.zoom = 10;
 	data.win = mlx_new_window(data.mlx, data.width, data.height, "FdF");
 	data.img = mlx_new_image(data.mlx, data.width, data.height);
 	data.points = points;
