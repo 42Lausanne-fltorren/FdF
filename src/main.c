@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 18:06:02 by fltorren          #+#    #+#             */
-/*   Updated: 2024/02/01 11:36:13 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/02/24 10:06:51 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	ft_read_file(argv[1], &points);
+	if (!points.array || !points.size)
+		return (0);
 	data.mlx = mlx_init();
 	data.width = 600;
 	data.height = 600; 
