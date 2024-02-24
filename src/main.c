@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 18:06:02 by fltorren          #+#    #+#             */
-/*   Updated: 2024/02/24 10:06:51 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/02/24 10:53:36 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 		return (0);
 	data.mlx = mlx_init();
 	data.width = 600;
-	data.height = 600; 
+	data.height = 600;
 	data.alpha = -1.4472;
 	data.zoom = 3;
 	data.win = mlx_new_window(data.mlx, data.width, data.height, "FdF");

@@ -70,7 +70,8 @@ t_point2	ft_point(t_point3 p, t_data data)
 	t_point2	point;
 
 	point.x = (sqrt(2.0f) / 2.0f * (p.x - p.y)) * data.zoom + data.x0;
-	point.y = (sqrt(2.0f / 3.0f) * (-p.z) - 1.0f / sqrt(6.0f) * (p.x + p.y)) * data.zoom + data.y0;
+	point.y = (sqrt(2.0f / 3.0f) * (-p.z) - 1.0f / sqrt(6.0f)
+			* (p.x + p.y)) * data.zoom + data.y0;
 	return (point);
 }
 
