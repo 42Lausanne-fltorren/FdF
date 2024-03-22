@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:48:18 by fltorren          #+#    #+#             */
-/*   Updated: 2024/02/24 09:58:32 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/03/22 13:38:08 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,8 @@ int			ft_max(int a, int b);
 int			ft_abs(int a);
 int			ft_min(int a, int b);
 int			ft_atoi_base(char *str, char *base);
+
+int			close_hook(t_data *data);
+int			key_hook(int keycode, t_data *data);
+int			mouse_hook(int button, int x, int y, t_data *data);
 #endif
