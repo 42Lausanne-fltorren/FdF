@@ -6,7 +6,7 @@
 /*   By: fltorren <fltorren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 18:06:02 by fltorren          #+#    #+#             */
-/*   Updated: 2024/02/24 10:53:36 by fltorren         ###   ########.fr       */
+/*   Updated: 2024/03/22 13:33:18 by fltorren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,28 @@ static int	mouse_hook(int button, int x, int y, t_data *data)
 	return (0);
 }
 
+static int	ft_usage_error(void)
+{
+	write(2, "Usage: ./fdf [map]\n", 20);
+	return (0);
+}
+
+static int	ft_map_error(void)
+{
+	write(2, "Error: Invalid map\n", 20);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_points	points;
 	t_data		data;
 
 	if (argc != 2)
-		return (0);
+		return (ft_usage_error());
 	ft_read_file(argv[1], &points);
 	if (!points.array || !points.size)
-		return (0);
+		return (ft_map_error());
 	data.mlx = mlx_init();
 	data.width = 600;
 	data.height = 600;
